@@ -70,4 +70,16 @@ public class ClienteServicios {
 			}
 			
 		}
+		
+		public static void listaClientes() {
+			ClienteDatos.listaClientes();
+		}
+		
+		public static void buscarCliente() {
+			System.out.println("¿Que nombre desea buscar?");
+			Scanner scanner=new Scanner(System.in);
+			String nombre=scanner.nextLine();
+			scanner.close();
+			ClienteDatos.buscarCliente(nombre);
+		}
 }
