@@ -19,5 +19,12 @@ public class CatalogoServicios {
 		CatalogoDatos nuevoCatalogo = new CatalogoDatos();
 		nuevoCatalogo.addCatalogo(generoNuevo);
 	}
+	public static void buscarGenero() {
+		System.out.println("¿Que genero desea buscar?");
+		Scanner scanner = new Scanner(System.in);
+		String genero = scanner.nextLine();
+		scanner.close();
+		CatalogoDatos.buscarGenero();
+	}
 
 }

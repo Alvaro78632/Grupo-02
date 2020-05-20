@@ -24,4 +24,41 @@ public class CatalogoDatos {
 		}
 
 	}
+
+	public static void eliminarCatalogo(String genero) {
+		if (buscarGenero(genero)) {
+			try {
+				Connection conexionBuena = Conectar.Conexion();
+				Statement st = conexionBuena.createStatement();
+				String sql = "DELETE FROM genero WHERE genero.tipoGenero='" + genero +"';";
+				st.executeUpdate(sql);
+				System.out.println("Genero borrado corectamente.");
+
+			} catch (SQLException e) {
+				throw new Exception("--- Epic Fail al obtener listado de generos ---", e);
+			}
+		}
+	}
+
+	public static void buscarGenero(String genero) {
+		// METODO COMPROBAR Genero
+				try {
+					Connection conexionBuena = Conectar.Conexion();
+					Statement st = conexionBuena.createStatement();
+					String sql = "SELECT * FROM genero WHERE genero.tipoGenero='" + genero +"';";
+					ResultSet rs = st.executeQuery(sql);
+
+					if (!rs.next()) {
+						System.out.println("El genero existe no existe");
+						return false;
+					} else {
+						System.out.println("El genero existe");
+						return true;
+					}
+				} catch (SQLException e) {
+					System.out.println("Fallo con la base de datos.\n" + e);
+					return false;
+				}
+	}
+
 }
