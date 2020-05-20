@@ -7,7 +7,7 @@ public class Cliente {
 	private int idCliente;
 	private String nombre;
 	private Date fechaRegistro;
-	
+
 	public Cliente() {
 		super();
 	}
@@ -47,5 +47,5 @@ public class Cliente {
 	public String toString() {
 		return "Cliente [idCliente=" + idCliente + ", nombre=" + nombre + ", fechaRegistro=" + fechaRegistro + "]";
 	}
-		
+
 }

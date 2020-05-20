@@ -9,13 +9,13 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		//PeliculasServicio.mostrarPeliculasPorGenero();
-		//PeliculasServicio.mostrarPeliculas();
-		//PeliculasServicio.eliminarPelicula();
+		// PeliculasServicio.mostrarPeliculasPorGenero();
+		// PeliculasServicio.mostrarPeliculas();
+		// PeliculasServicio.eliminarPelicula();
 		leerFichero.leerPeliculas();
-		//PeliculasServicio.addPelicula();
-		//ClienteServicios.addCliente();
-		//ClienteServicios.modificarCliente();
+		// PeliculasServicio.addPelicula();
+		// ClienteServicios.addCliente();
+		// ClienteServicios.modificarCliente();
 	}
 
 }

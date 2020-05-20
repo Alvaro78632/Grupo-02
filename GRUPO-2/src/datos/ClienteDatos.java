@@ -81,38 +81,38 @@ public class ClienteDatos {
 				System.out.println("Cliente modificado correctamente.");
 
 			} catch (SQLException e) {
-				System.out.println("--- Epic Fail al modificar cliente ---"+ e);
+				System.out.println("--- Epic Fail al modificar cliente ---" + e);
 			}
 		} else
 			System.out.println("El Cliente no existe");
 	}
-	
+
 	public static void listaClientes() {
 		try {
-		Connection conexionBuena = Conectar.Conexion();
-		Statement st = conexionBuena.createStatement();
-		String sql = "SELECT nombre FROM cliente;";
-		ResultSet rs = st.executeQuery(sql);
-		while(rs.next()) {
-			System.out.println(rs.getString("nombre"));
+			Connection conexionBuena = Conectar.Conexion();
+			Statement st = conexionBuena.createStatement();
+			String sql = "SELECT nombre FROM cliente;";
+			ResultSet rs = st.executeQuery(sql);
+			while (rs.next()) {
+				System.out.println(rs.getString("nombre"));
+			}
+		} catch (SQLException e) {
+			System.out.println("Fallo en seleccion de nombres");
 		}
-	}catch (SQLException e) {
-		System.out.println("Fallo en seleccion de nombres");
 	}
-	}
-	
+
 	public static void buscarCliente(String nombre) {
 		try {
-		Connection conexionBuena = Conectar.Conexion();
-		Statement st = conexionBuena.createStatement();
-		String sql = "SELECT nombre FROM cliente WHERE nombre= '"+nombre+"';";
-		ResultSet rs = st.executeQuery(sql);
-		while(rs.next()) {
-			System.out.println(rs.getString("nombre")+rs.getInt("idCliente"));
+			Connection conexionBuena = Conectar.Conexion();
+			Statement st = conexionBuena.createStatement();
+			String sql = "SELECT nombre FROM cliente WHERE nombre= '" + nombre + "';";
+			ResultSet rs = st.executeQuery(sql);
+			while (rs.next()) {
+				System.out.println(rs.getString("nombre") + rs.getInt("idCliente"));
+			}
+		} catch (SQLException a) {
+			System.out.println("Fallo en seleccion de clientes");
 		}
-	}catch (SQLException a) {
-		System.out.println("Fallo en seleccion de clientes");
 	}
-}
 
 }

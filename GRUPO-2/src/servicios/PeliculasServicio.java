@@ -12,12 +12,13 @@ public class PeliculasServicio {
 		String titulo = LecturaDatos.leerLine("Dime el titulo de la pelicula: ");
 		int agno = LecturaDatos.leerInt("Dime el año de la pelicula: ");
 		int tipoGenero = LecturaDatos.leerInt("Dime el genero de la pelicula: ");
-		//LLAMAMOS A LA CAPA DATOS PASANDOLE LOS PARAMETROS --> PARA SER INSERTADOS EN LA BBDD
+		// LLAMAMOS A LA CAPA DATOS PASANDOLE LOS PARAMETROS --> PARA SER INSERTADOS EN
+		// LA BBDD
 		PeliculaDatos.addPelicula(titulo, agno, tipoGenero);
 	}
-	
+
 	public static void eliminarPelicula() {
-		
+
 	}
 
 	public static void mostrarPeliculas() {

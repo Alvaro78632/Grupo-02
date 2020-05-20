@@ -1,4 +1,5 @@
 package datos;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -33,7 +34,7 @@ public class PeliculaDatos {
 			ResultSet respuesta = pregunta.executeQuery(query);
 			if (!respuesta.next()) {
 				System.out.println("No hay peliculas");
-			}else {
+			} else {
 				while (respuesta.next()) {
 					System.out.println(respuesta.getString("titulo"));
 					// La columna 1 deberia ser la de los nombres
@@ -53,11 +54,12 @@ public class PeliculaDatos {
 		try {
 			Connection conexionBuena2 = Conectar.Conexion();
 			Statement pregunta2 = conexionBuena2.createStatement();
-			String query2 = "SELECT * FROM genero, pelicula WHERE pelicula.idGenero = genero.idGenero AND genero.tipoGenero = '"+genero+"' ";
+			String query2 = "SELECT * FROM genero, pelicula WHERE pelicula.idGenero = genero.idGenero AND genero.tipoGenero = '"
+					+ genero + "' ";
 			ResultSet respuesta2 = pregunta2.executeQuery(query2);
 			if (!respuesta2.next()) {
-				System.out.println("No hay peliculas del genero: "+genero);
-			}else {
+				System.out.println("No hay peliculas del genero: " + genero);
+			} else {
 				while (respuesta2.next()) {
 					System.out.println(respuesta2.getString("pelicula.titulo"));
 				}
