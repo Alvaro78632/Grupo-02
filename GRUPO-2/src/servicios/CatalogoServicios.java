@@ -11,7 +11,7 @@ public class CatalogoServicios {
 		
 	}
 	
-	public void IntroducirCatalogo() {
+	public static void IntroducirCatalogo() {
 		System.out.println("Introduzca el nuevo género");
 		Scanner scanner=new Scanner(System.in);
 	    String generoNuevo=scanner.nextLine();
