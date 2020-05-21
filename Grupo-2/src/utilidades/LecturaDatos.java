@@ -15,7 +15,7 @@ public class LecturaDatos {
 	
 	public static String leerLine(String msg) {
 		System.out.println(msg);
-		return leerPalabra();
+		return leerLinea();
 	}
 	
 	public static String leerLinea() {

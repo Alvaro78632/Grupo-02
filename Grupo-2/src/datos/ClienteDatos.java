@@ -92,10 +92,10 @@ public class ClienteDatos {
 		try {
 			Connection conexionBuena = Conectar.Conexion();
 			Statement st = conexionBuena.createStatement();
-			String sql = "SELECT nombre FROM cliente;";
+			String sql = "SELECT * FROM cliente;";
 			ResultSet rs = st.executeQuery(sql);
 			while (rs.next()) {
-				System.out.println(rs.getString("nombre"));
+				System.out.println(rs.getString("nombre")+" ("+rs.getString("idCliente")+")");
 			}
 		} catch (SQLException e) {
 			System.out.println("Fallo en seleccion de nombres");

@@ -1,5 +1,5 @@
 package control;
-// SERGIO
+
 
 import servicios.CatalogoServicios;
 import servicios.ClienteServicios;
@@ -8,6 +8,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import datos.CatalogoDatos;
+import datos.PeliculaDatos;
 import utilidades.Imprimir;
 import utilidades.LecturaDatos;
 import utilidades.Menu;
@@ -42,13 +43,13 @@ public class Streaming {
 						ClienteServicios.listaClientes();
 						break;
 					case 6:
-						Imprimir.imprimir("----EN DESARROLLO----");
+						PeliculaDatos.mostrarPeliculas();
 						break;
 					case 7:
-						Imprimir.imprimir("----EN DESARROLLO----");
+						Imprimir.imprimir("----EN DESARROLLO----\n");
 						break;
 					case 8:
-						Imprimir.imprimir("----EN DESARROLLO----");
+						Imprimir.imprimir("----EN DESARROLLO----\n");
 						break;
 					case 0:
 						Imprimir.imprimir("\nSaliendo...\n");
@@ -67,19 +68,19 @@ public class Streaming {
 						PeliculasServicio.eliminarPelicula();
 						break;
 					case 3:
-
+						PeliculasServicio.modificarPelicula();
 						break;
 					case 4:
 						PeliculasServicio.mostrarPeliculas();
 						break;
 					case 5:
-						Imprimir.imprimir("----EN DESARROLLO----");
+						Imprimir.imprimir("----EN DESARROLLO----\n");
 						break;
 					case 6:
-						Imprimir.imprimir("----EN DESARROLLO----");
+						Imprimir.imprimir("----EN DESARROLLO----\n");
 						break;
 					case 7:
-						Imprimir.imprimir("----EN DESARROLLO----");
+						Imprimir.imprimir("----EN DESARROLLO----\n");
 						break;
 					case 0:
 						Imprimir.imprimir("\nSaliendo...\n");
@@ -98,10 +99,10 @@ public class Streaming {
 						CatalogoServicios.eliminarCatalogo();
 						break;
 					case 3:
-						Imprimir.imprimir("----EN DESARROLLO----");
+						CatalogoServicios.modificarCatalogo();
 						break;
 					case 4:
-						Imprimir.imprimir("----EN DESARROLLO----");
+						Imprimir.imprimir("----EN DESARROLLO----\n");
 					case 0:
 						Imprimir.imprimir("\nSaliendo...\n");
 						break;

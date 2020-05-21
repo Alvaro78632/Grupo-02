@@ -62,4 +62,18 @@ public class CatalogoDatos {
 		}
 	}
 
+	public static void modificarCatalogo(int idGenero,String tipoGenero) {
+		if (buscarGenero(idGenero)) {
+			try {
+				Connection conexionBuena = Conectar.Conexion();
+				Statement st = conexionBuena.createStatement();
+				String sql = "UPDATE genero SET tipoGenero='" + tipoGenero+  "' WHERE genero.idGenero='" +idGenero + "';";
+				st.executeUpdate(sql);
+				System.out.println("Genero modificado corectamente.");
+
+			} catch (SQLException e) {
+				System.out.println("Fallo de conexion");
+			}
+		}
+	}
 }
