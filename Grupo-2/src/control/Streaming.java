@@ -95,7 +95,7 @@ public class Streaming {
 						CatalogoServicios.IntroducirCatalogo();
 						break;
 					case 2:
-						Imprimir.imprimir("----EN DESARROLLO----");
+						CatalogoServicios.eliminarCatalogo();
 						break;
 					case 3:
 						Imprimir.imprimir("----EN DESARROLLO----");
