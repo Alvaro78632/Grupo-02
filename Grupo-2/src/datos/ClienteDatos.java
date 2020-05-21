@@ -106,10 +106,14 @@ public class ClienteDatos {
 		try {
 			Connection conexionBuena = Conectar.Conexion();
 			Statement st = conexionBuena.createStatement();
-			String sql = "SELECT nombre FROM cliente WHERE nombre= '" + nombre + "';";
+			String sql = "SELECT nombre, idCliente FROM cliente WHERE nombre= '" + nombre + "';";
 			ResultSet rs = st.executeQuery(sql);
+			if(!rs.next()) {
+				System.out.println("No existe el usuario");
+			}else {
 			while (rs.next()) {
-				System.out.println(rs.getString("nombre") + rs.getInt("idCliente"));
+				System.out.println(rs.getString("nombre")+ " ("+ rs.getInt("idCliente")+")");
+			}
 			}
 		} catch (SQLException a) {
 			System.out.println("Fallo en seleccion de clientes");

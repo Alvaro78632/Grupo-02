@@ -75,10 +75,7 @@ public class ClienteServicios {
 	}
 
 	public static void buscarCliente() {
-		System.out.println("¿Que nombre desea buscar?");
-		Scanner scanner = new Scanner(System.in);
-		String nombre = scanner.nextLine();
-		scanner.close();
+		String nombre = LecturaDatos.leerLine("¿Que nombre desea buscar?");
 		ClienteDatos.buscarCliente(nombre);
 	}
 }
