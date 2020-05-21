@@ -26,6 +26,40 @@ public class PeliculaDatos {
 
 	}
 
+	public static void eliminarPelicula(int cod) {
+		if (comprobarPelicula(cod)) {
+			Connection conexionBuena = Conectar.Conexion();
+			Statement st;
+			try {
+				st = conexionBuena.createStatement();
+				String sql = "DELETE FROM pelicula  WHERE idPelicula='" + cod + "';";
+				st.executeUpdate(sql);
+				System.out.println("Pelicula borrada corectamente.");
+			} catch (SQLException e) {
+				System.out.println(e.toString());
+			}
+		}
+	}
+	
+	public static boolean comprobarPelicula(int cod) {
+		try {
+			Connection conexionBuena = Conectar.Conexion();
+			Statement st = conexionBuena.createStatement();
+			String sql = "SELECT * FROM pelicula WHERE idPelicula='" + cod + "';";
+			ResultSet rs = st.executeQuery(sql);
+
+			if (!rs.next()) {
+				System.out.println("Pelicula no existe");
+				return false;
+			} else {
+				return true;
+			}
+		} catch (SQLException e) {
+			System.out.println("Fallo con la base de datos.\n" + e);
+			return false;
+		}
+	}
+
 	public static void mostrarPeliculas() {
 		Connection conexionBuena = Conectar.Conexion();
 		try {
@@ -36,7 +70,7 @@ public class PeliculaDatos {
 				System.out.println("No hay peliculas");
 			} else {
 				while (respuesta.next()) {
-					System.out.println(respuesta.getString("titulo"));
+					System.out.println(respuesta.getString("idPelicula")+") "+respuesta.getString("titulo"));
 					// La columna 1 deberia ser la de los nombres
 				}
 			}
