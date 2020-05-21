@@ -12,6 +12,7 @@ public class PeliculaDatos {
 
 	public static void addPelicula(String titulo, int agno, int tipoGenero) {
 		try {
+			//Hola Alvaro
 			Connection conexionBuena = Conectar.Conexion();
 			Statement st2=conexionBuena.createStatement();
 		    String sql2="Select * FROM genero;";
