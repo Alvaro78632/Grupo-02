@@ -18,7 +18,6 @@ public class Streaming {
 		Imprimir.imprimir("Introduce un numero del 1 al 4.\n");
 		Menu.Principal();
 		while (b) {
-			while (true) {
 				menu = LecturaDatos.leerInt();;
 				switch (menu) {
 				case 1:
@@ -114,4 +113,3 @@ public class Streaming {
 			}
 		}
 	}
-}
