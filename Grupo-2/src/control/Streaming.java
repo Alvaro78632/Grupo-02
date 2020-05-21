@@ -22,8 +22,9 @@ public class Streaming {
 				menu = LecturaDatos.leerInt();;
 				switch (menu) {
 				case 1:
-					menu = LecturaDatos.leerInt("Elije opcion:");
+					Imprimir.imprimir("Elije opcion:\n");
 					Menu.Usuarios();
+					menu = LecturaDatos.leerInt();
 					switch (menu) {
 					case 1:
 						ClienteServicios.addCliente();
@@ -55,8 +56,9 @@ public class Streaming {
 					}
 					break;
 				case 2:
-					menu = LecturaDatos.leerInt("Elije opcion:");
-					Menu.Peliculas();				
+					Imprimir.imprimir("Elije opcion:\n");
+					Menu.Peliculas();
+					menu = LecturaDatos.leerInt();			
 					switch (menu) {
 					case 1:
 						PeliculasServicio.addPelicula();
@@ -85,8 +87,9 @@ public class Streaming {
 					}
 					break;
 				case 3:
-					menu = LecturaDatos.leerInt("Elije opcion:");
+					Imprimir.imprimir("Elije opcion:\n");
 					Menu.Catalogo();
+					menu = LecturaDatos.leerInt();
 					switch (menu) {
 					case 1:
 						CatalogoServicios.IntroducirCatalogo();
