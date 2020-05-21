@@ -13,6 +13,10 @@ public class PeliculaDatos {
 	public static void addPelicula(String titulo, int agno, int tipoGenero) {
 		try {
 			Connection conexionBuena = Conectar.Conexion();
+			Statement st2=conexionBuena.createStatement();
+		    String sql2="Select * FROM genero;";
+		    ResultSet rs=st2.executeQuerry(sql2);
+		    System.out.println(rs.next());
 			Statement st = conexionBuena.createStatement();
 			String sql = "INSERT INTO pelicula(titulo, anyoEstreno, idGenero) VALUES ('" + titulo + "' , '" + agno
 					+ "', '" + tipoGenero + "')";
