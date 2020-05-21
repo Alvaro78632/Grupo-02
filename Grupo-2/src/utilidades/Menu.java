@@ -19,6 +19,7 @@ public class Menu {
 				+ "*     6.Listar peliculas disponibles del usuario.   *\n"
 				+ "*     7.Listar peliculas vistas.                    *\n"
 				+ "*     8.Listar peliculas favoritas.                 *\n"
+				+ "*     9.Listar todos los usuarios con su id.        *\n"
 				+ "*     0.Salir.                                      *\n"
 				+ "*****************************************************\n");
 	}

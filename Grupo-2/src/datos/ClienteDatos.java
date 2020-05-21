@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 import utilidades.Conectar;
@@ -96,6 +97,20 @@ public class ClienteDatos {
 			ResultSet rs = st.executeQuery(sql);
 			while (rs.next()) {
 				System.out.println(rs.getString("nombre")+" ("+rs.getString("idCliente")+")");
+			}
+		} catch (SQLException e) {
+			System.out.println("Fallo en seleccion de nombres");
+		}
+	}
+	
+	public static void listaSimpleClientes() {
+		try {
+			Connection conexionBuena = Conectar.Conexion();
+			Statement st = conexionBuena.createStatement();
+			String sql = "SELECT * FROM cliente, genero;";
+			ResultSet rs = st.executeQuery(sql);
+			while (rs.next()) {
+				System.out.println(rs.getString("nombre")+" "+rs.getString("tipoGenero"));
 			}
 		} catch (SQLException e) {
 			System.out.println("Fallo en seleccion de nombres");

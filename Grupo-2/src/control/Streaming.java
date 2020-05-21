@@ -40,7 +40,7 @@ public class Streaming {
 						ClienteServicios.buscarCliente();
 						break;
 					case 5:
-						ClienteServicios.listaClientes();
+						ClienteServicios.listaSimpleClientes();
 						break;
 					case 6:
 						PeliculaDatos.mostrarPeliculas();
@@ -50,6 +50,9 @@ public class Streaming {
 						break;
 					case 8:
 						Imprimir.imprimir("----EN DESARROLLO----\n");
+						break;
+					case 9:
+						ClienteServicios.listaClientes();
 						break;
 					case 0:
 						Imprimir.imprimir("\nSaliendo...\n");

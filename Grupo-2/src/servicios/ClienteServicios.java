@@ -74,6 +74,10 @@ public class ClienteServicios {
 		ClienteDatos.listaClientes();
 	}
 
+	public static void listaSimpleClientes() {
+		ClienteDatos.listaSimpleClientes();
+	}
+	
 	public static void buscarCliente() {
 		String nombre = LecturaDatos.leerLine("¿Que nombre desea buscar?");
 		ClienteDatos.buscarCliente(nombre);
