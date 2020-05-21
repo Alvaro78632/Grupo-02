@@ -101,20 +101,31 @@ public class ClienteDatos {
 		} catch (SQLException e) {
 			System.out.println("Fallo en seleccion de nombres");
 		}
+		System.out.println("\n");
 	}
 	
 	public static void listaSimpleClientes() {
+		String aux;
 		try {
 			Connection conexionBuena = Conectar.Conexion();
 			Statement st = conexionBuena.createStatement();
 			String sql = "SELECT * FROM cliente, genero;";
 			ResultSet rs = st.executeQuery(sql);
-			while (rs.next()) {
-				System.out.println(rs.getString("nombre")+" "+rs.getString("tipoGenero"));
+			rs.next();
+			aux=rs.getString("nombre");	
+			System.out.println(rs.getString("nombre"));
+			while(rs.next()){							
+				if(aux.equalsIgnoreCase(rs.getString("nombre"))){
+					System.out.print(" "+rs.getString("tipoGenero")+" ");
+				}else {
+					aux=rs.getString("nombre");
+					System.out.print("\n["+rs.getString("nombre")+"]:");
+				}
 			}
 		} catch (SQLException e) {
 			System.out.println("Fallo en seleccion de nombres");
 		}
+		System.out.println("\n");
 	}
 
 	public static void buscarCliente(String nombre) {

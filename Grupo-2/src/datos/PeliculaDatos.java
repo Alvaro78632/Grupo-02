@@ -78,6 +78,7 @@ public class PeliculaDatos {
 		} catch (SQLException e) {
 			System.out.println("Error en selección de datos");
 		}
+		System.out.println("\n");
 	}
 
 	public static void mostrarPeliculasPorGenero() {
@@ -102,6 +103,7 @@ public class PeliculaDatos {
 		} catch (SQLException e) {
 			System.out.println("Genero mal introducido");
 		}
+		System.out.println("\n");
 	}
 
 	public static void modificarPelicula(int cod, String titulo) {
