@@ -12,12 +12,7 @@ public class PeliculaDatos {
 
 	public static void addPelicula(String titulo, int agno, int tipoGenero) {
 		try {
-			//Hola Alvaro
 			Connection conexionBuena = Conectar.Conexion();
-			Statement st2=conexionBuena.createStatement();
-		    String sql2="Select * FROM genero;";
-		    ResultSet rs=st2.executeQuerry(sql2);
-		    System.out.println(rs.next());
 			Statement st = conexionBuena.createStatement();
 			String sql = "INSERT INTO pelicula(titulo, anyoEstreno, idGenero) VALUES ('" + titulo + "' , '" + agno
 					+ "', '" + tipoGenero + "')";
@@ -109,4 +104,21 @@ public class PeliculaDatos {
 		}
 	}
 
+	public static void modificarPelicula(int cod, String titulo) {
+		if (comprobarPelicula(cod)) {
+			Connection conexionBuena = Conectar.Conexion();
+			Statement st;
+			try {
+				st = conexionBuena.createStatement();
+				String sql = "UPDATE pelicula SET  titulo= '" + titulo + "'WHERE idPelicula='" + cod + "';";
+				st.executeUpdate(sql);
+				System.out.println("Pelicula modificada correctamente.");
+			} catch (SQLException e) {
+				System.out.println(e.toString());
+			}
+		}else {
+			System.out.println("No existe esa pelicula");
+		}
+		
+	}
 }
