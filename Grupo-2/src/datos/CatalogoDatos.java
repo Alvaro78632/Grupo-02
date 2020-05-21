@@ -17,8 +17,7 @@ public class CatalogoDatos {
 
 	public static void addCatalogo(String genero) {
 		try {
-			Conectar conexion = new Conectar();
-			Connection conexionBuena = conexion.Conexion();
+			Connection conexionBuena = Conectar.Conexion();
 			Statement peticion = conexionBuena.createStatement();
 			peticion.executeUpdate("INSERT INTO genero(tipoGenero) VALUES ('" + genero + "')");
 		} catch (SQLException e) {
