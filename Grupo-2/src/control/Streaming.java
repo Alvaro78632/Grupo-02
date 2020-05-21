@@ -17,8 +17,8 @@ public class Streaming {
 		int menu;
 		boolean b = true;
 		Imprimir.imprimir("Introduce un numero del 1 al 4.\n");
-		Menu.Principal();
 		while (b) {
+				Menu.Principal();
 				menu = LecturaDatos.leerInt();;
 				switch (menu) {
 				case 1:

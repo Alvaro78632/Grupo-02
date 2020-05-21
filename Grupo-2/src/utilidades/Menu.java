@@ -2,10 +2,11 @@ package utilidades;
 
 public class Menu {
 	public static void Principal() {
-		Imprimir.imprimir("1.Gestion de usuario.\n"
-				+ "2.Gestion de peliculas.\n"
-				+ "3.Gestion de catalogos.\n"
-				+ "0.Salir.\n");
+		Imprimir.imprimir(""
+				+ "*     1.Gestion de usuario.\n"
+				+ "*     2.Gestion de peliculas.\n"
+				+ "*     3.Gestion de catalogos.\n"
+				+ "*     0.Salir.\n");
 	}
 	public static void Usuarios() {
 		Imprimir.imprimir("1.Añadir usuario.\n"
@@ -33,6 +34,6 @@ public class Menu {
 				+ "2.Eliminar catalogo.\n"
 				+ "3.Modificar catalogo.\n"
 				+ "4.Listar todos los catalogos.\n"
-				+ "0.Salir.");
+				+ "0.Salir.\n");
 	}
 }
