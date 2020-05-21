@@ -27,27 +27,26 @@ public class CatalogoDatos {
 
 	}
 
-	public static void eliminarCatalogo(String genero) throws Exception {
-		if (buscarGenero(genero)) {
+	public static void eliminarCatalogo(int idGenero) {
+		if (buscarGenero(idGenero)) {
 			try {
 				Connection conexionBuena = Conectar.Conexion();
 				Statement st = conexionBuena.createStatement();
-				String sql = "DELETE FROM genero WHERE genero.tipoGenero='" + genero + "';";
+				String sql = "DELETE FROM genero WHERE genero.idGenero='" +idGenero + "';";
 				st.executeUpdate(sql);
 				System.out.println("Genero borrado corectamente.");
 
 			} catch (SQLException e) {
-				throw new Exception("--- Epic Fail al obtener listado de generos ---", e);
+				System.out.println("Fallo de conexion");
 			}
 		}
 	}
 
-	public static boolean buscarGenero(String genero) {
-		// METODO COMPROBAR Genero
+	public static boolean buscarGenero(int idGenero) {
 		try {
 			Connection conexionBuena = Conectar.Conexion();
 			Statement st = conexionBuena.createStatement();
-			String sql = "SELECT * FROM genero WHERE genero.tipoGenero='" + genero + "';";
+			String sql = "SELECT * FROM genero WHERE genero.idGenero='" + idGenero + "';";
 			ResultSet rs = st.executeQuery(sql);
 
 			if (!rs.next()) {
