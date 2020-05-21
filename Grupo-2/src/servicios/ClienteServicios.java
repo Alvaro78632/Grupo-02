@@ -16,7 +16,7 @@ public class ClienteServicios {
 		System.out.println("Introduzca la fecha de registro");
 		int dia = LecturaDatos.leerInt("dia");
 		int mes = LecturaDatos.leerInt("mes");
-		int agno =LecturaDatos.leerInt("año");
+		int agno = LecturaDatos.leerInt("año");
 		Date fecha = new Date(agno, mes, dia);
 		ClienteDatos.addCliente(nombre, dia, mes, agno);
 
